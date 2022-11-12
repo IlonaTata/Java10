@@ -54,9 +54,11 @@ public class Radio {
         this.maxSoundVolume = maxSoundVolume;
         this.soundVolume = minSoundVolume;
     }
-        public int getSoundVolume () {
-            return soundVolume;
-        }
+
+    public int getSoundVolume() {
+        return soundVolume;
+    }
+
     public void setSoundVolume(int newSoundVolume) {
         if (newSoundVolume < minSoundVolume) {
             return;
@@ -67,24 +69,24 @@ public class Radio {
         soundVolume = newSoundVolume;
     }
 
-        public void increaseVolume () {
-            if (soundVolume < maxSoundVolume) {
-                soundVolume = soundVolume + 1;
-            }
-        }
-
-        public void increaseVolumeMoreMax () {
-            if (soundVolume >= maxSoundVolume) {
-                soundVolume = maxSoundVolume;
-            }
-        }
-
-        public void increaseVolumeMoreMin () {
-            if (soundVolume <= minSoundVolume) {
-                soundVolume = minSoundVolume;
-            }
+    public void increaseVolume() {
+        if (soundVolume < maxSoundVolume) {
+            soundVolume = soundVolume + 1;
         }
     }
+
+    public void increaseVolumeMoreMax() {
+        if (soundVolume >= maxSoundVolume) {
+            soundVolume = maxSoundVolume;
+        }
+    }
+
+    public void increaseVolumeMoreMin() {
+        if (soundVolume <= minSoundVolume) {
+            soundVolume = minSoundVolume;
+        }
+    }
+}
 
 
 
