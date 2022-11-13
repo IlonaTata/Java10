@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
     @Test
     public void shouldSetStation() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio(10);
         number.setCurrentRadioStationNumber(5);
         int expected = 5;
         int actual = number.getCurrentRadioStationNumber();
@@ -14,7 +14,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetStation1() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio(10);
         number.setCurrentRadioStationNumber(-2);
         int expected = 0;
         int actual = number.getCurrentRadioStationNumber();
@@ -23,7 +23,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetStation2() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio(10);
         number.setCurrentRadioStationNumber(10);
         int expected = 0;
         int actual = number.getCurrentRadioStationNumber();
@@ -32,7 +32,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNextStation() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio(10);
         number.setCurrentRadioStationNumber(5);
         int expected = 6;
         int actual = number.nextStation();
@@ -41,7 +41,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetStationMore9() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio(10);
         number.setCurrentRadioStationNumber(9);
         int expected = 0;
         int actual = number.nextStation();
@@ -50,7 +50,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetStationLess0() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio(10);
         number.setCurrentRadioStationNumber(0);
         int expected = 9;
         int actual = number.prevStation();
@@ -59,7 +59,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetPrevStation() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio(10);
         number.setCurrentRadioStationNumber(5);
         int expected = 4;
         int actual = number.prevStation();
@@ -68,9 +68,17 @@ public class RadioTest {
 
     @Test
     public void sizeTest() {
-        Radio number = new Radio(0, 9, 10);
+        Radio number = new Radio();
         int expected = 9;
         int actual = number.getMaxRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void amountStation() {
+        Radio number = new Radio();
+        int expected = 10;
+        int actual = number.getMaxRadioAmount();
         Assertions.assertEquals(expected, actual);
     }
 
@@ -167,7 +175,5 @@ public class RadioTest {
         int actual = volumeNumber.getSoundVolume();
         Assertions.assertEquals(expected, actual);
     }
-
-
 
 }
