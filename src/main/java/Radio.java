@@ -1,5 +1,5 @@
 public class Radio {
-    private int size = 9;
+    private int size = 10;
     private int minRadioStationNumber = 0;
     private int maxRadioStationNumber = 9;
     private int currentRadioStationNumber = minRadioStationNumber;
@@ -7,7 +7,13 @@ public class Radio {
     private int maxSoundVolume = 100;
     private int minSoundVolume = 0;
 
-    public Radio(int minRadioStationNumber, int maxRadioStationNumber, int size) {
+    public Radio(int size) {
+        this.minRadioStationNumber = minRadioStationNumber;
+        this.maxRadioStationNumber = maxRadioStationNumber;
+        this.currentRadioStationNumber = minRadioStationNumber;
+    }
+
+    public Radio() {
         this.minRadioStationNumber = minRadioStationNumber;
         this.maxRadioStationNumber = maxRadioStationNumber;
         this.currentRadioStationNumber = minRadioStationNumber;
@@ -46,6 +52,10 @@ public class Radio {
 
     public int getMaxRadioStationNumber() {
         return maxRadioStationNumber;
+    }
+
+    public int getMaxRadioAmount() {
+        return maxRadioStationNumber=maxRadioStationNumber+1;
     }
 
 
