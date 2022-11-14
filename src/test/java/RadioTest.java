@@ -32,16 +32,32 @@ public class RadioTest {
     @Test
     public void shouldSetNextStation() {
         Radio number = new Radio(10);
-        number.setCurrentRadioStationNumber(5);
-        int expected = 6;
+        number.setCurrentRadioStationNumber(9);
+        int expected = 0;
         int actual = number.nextStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
+    public void shouldSetMaxStation() {
+        Radio number = new Radio();
+        int expected = 9;
+        int actual = number.getMaxRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
+    public void shouldSetMinStation() {
+        Radio number = new Radio();
+        int expected = 0;
+        int actual = number.getMinRadioStationNumber();
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
     public void shouldSetStationMore9() {
-        Radio number = new Radio(10);
-        number.setCurrentRadioStationNumber(9);
+        Radio number = new Radio(12);
+        number.setCurrentRadioStationNumber(11);
         int expected = 0;
         int actual = number.nextStation();
         Assertions.assertEquals(expected, actual);
